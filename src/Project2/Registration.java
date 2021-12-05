@@ -1,34 +1,47 @@
 package Project2;
 
+import java.util.Locale;
+
 public class Registration {
-    private String email="kaka@yahoo";
-    private String userName="kat";
-    private String password="kater";
-    void EnterEmail() {
-        if (email.contains("yahoo")) {
-            System.out.println("Your email is accepted");
-        }else{
-            System.out.println("your email is not accepted");
-        }}
-        void EnterUsername(){
-            if(userName.isEmpty()){
-                System.out.println("Your user name can't be empty");
-        }
-            if(userName.length()>6){
-                System.out.println("Your username match");
-            }else{
-                System.out.println("Choose shorter username");
-            }}
-    void EnterPassword() {
-        if (password.contains(userName)) {
-            System.out.println("Password can't contain username");
-        } else {
-            System.out.println("your password looks good");
-        }}
-    public static void main(String[] args) {
-        Registration registration=new Registration();
-        registration.EnterEmail();
-        registration.EnterUsername();
-        registration.EnterPassword();
+    private String email;
+    private String userName;
+    private String password;
+
+       public String getEmail(){
+       return email;
+}
+public void setEmail (String email){
+    if(email.toLowerCase().contains("yahoo")){
+        this.email=email;
+    }else{
+        System.out.println("not valid email");
     }
 }
+public String getUserName(){
+    return  userName;
+}
+public void setUserName(String userName){
+    if (userName.isEmpty()||userName.length()<=6){
+        System.out.println("user can not empty");
+    }else{
+        this.userName=userName;
+    }
+}
+public String getPassword(){
+    return password;
+}
+
+public void setPassword(String password){
+    if (password.length()<6){
+        System.out.println("password can not be empty");
+    }else{
+        if (password.contains(userName)){
+            System.out.println("password can't contain username");
+        }else{
+            this.password=password;
+        }
+    }
+}
+
+}
+

@@ -1,39 +1,38 @@
 package Project2;
 
 public interface Shape {
-    void calculateArea();
-    void calculatePerimeter();
-    int a=10;
-    int r=5;
+    void calculateArea(double a);
+    void calculatePerimeter(double a );
+
 }
 class Circle implements Shape{
     @Override
-    public void calculateArea() {
-        System.out.println("Area of circle is :"+3.14*25);
+    public void calculateArea(double radius) {
+        System.out.println("Area of circle is :"+(Math.PI*Math.pow(radius,2)));
     }
     @Override
-    public void calculatePerimeter() {
-        System.out.println("Perimeter of circle is : "+2*3.14*5);
+    public void calculatePerimeter(double radius) {
+        System.out.println("Perimeter of circle is : "+2*Math.PI*radius);
     }
 }
 class Square implements Shape{
     @Override
-    public void calculateArea() {
+    public void calculateArea(double r) {
         System.out.println("Area of square is :"+r*r);
     }
     @Override
-    public void calculatePerimeter() {
-        System.out.println("Perimetr of square is :"+10*4);
+    public void calculatePerimeter(double length) {
+        System.out.println("Perimetr of square is :"+(4*length));
     }
 }
 class TesterSt{
     public static void main(String[] args) {
-        Shape shape=new Circle();
-        shape.calculateArea();
-        shape.calculatePerimeter();
+        Shape circle=new Circle();
+        circle.calculateArea(5);
+        circle.calculatePerimeter(5);
 
-        Shape shape1=new Square();
-        shape1.calculateArea();
-        shape1.calculatePerimeter();
+        Shape square=new Square();
+      square.calculateArea(10);
+       square.calculatePerimeter(10);
     }
 }
