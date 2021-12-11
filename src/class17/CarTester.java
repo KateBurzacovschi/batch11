@@ -1,0 +1,15 @@
+package com.syntax.class17;
+
+public class CarTester {
+
+	public static void main(String[] args) {
+	
+Car car=new Car("Tesla Model X","Tesla",
+"Model Y","black",2018,-1,"123",-1,300,true);
+car.printName();
+
+Car car2=new Car("Tesla model x");
+car2.printName();
+	}
+
+}
