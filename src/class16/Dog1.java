@@ -1,6 +1,6 @@
 package com.syntax.class16;
 
-public class Dog {
+public class Dog1 {
 	
 	String name;
 	static int noOfLegs=4;
